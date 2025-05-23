@@ -36,5 +36,5 @@ VerdiCarbon aims to democratize the carbon credit ecosystem by leveraging blockc
    - Host frontend on Vercel or Netlify.
 
 ## Personal Story Summary
-We, Erdem Yavuz Çeltek and Aral Özokçular, are committed to addressing environmental issues with cutting-edge technology. With VerdiCarbon, we aim to merge climate consciousness with blockchain innovation to make sustainability actionable, transparent, and efficient for all.
+We, Erdem Yavuz Çeltek and Aral Özokçular(@araloz), are committed to addressing environmental issues with cutting-edge technology. With VerdiCarbon, we aim to merge climate consciousness with blockchain innovation to make sustainability actionable, transparent, and efficient for all.
 
