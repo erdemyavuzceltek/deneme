@@ -1,40 +1,95 @@
-
 # VerdiCarbon
 
-## Project Description
-VerdiCarbon is a decentralized carbon credit wallet and trading platform built on the Stellar blockchain. It allows users to securely buy, sell, transfer, and burn carbon credits using a digital wallet. The system tracks user balances, maintains transaction history, and ensures that operations are only possible when wallets are unlocked. Through an efficient and transparent design, VerdiCarbon makes carbon offset participation accessible and traceable for everyone.
+## 🌱 Project Overview
 
-## Vision Statement
-VerdiCarbon aims to democratize the carbon credit ecosystem by leveraging blockchain technology for transparency, accessibility, and accountability. With VerdiCarbon, individuals and organizations can manage carbon credits easily while contributing to the global fight against climate change. By simplifying carbon credit trading and integrating robust wallet security features, we envision a greener, more responsible digital economy.
+**VerdiCarbon** is a decentralized application (dApp) that facilitates the management and exchange of carbon credits using blockchain technology. Built on the **Stellar** network and written in **Rust**, the platform enables users to securely **mint, transfer, buy, sell, and burn** carbon credits through a digital wallet system. The platform ensures that all transactions are traceable, wallets are secure, and operations are only executed when explicitly authorized by the user.
 
-## Software Development Plan
-1. **Smart Contract Core Design**
-   - Implement Wallet struct with fields: `balance`, `carbon_credit`, `history`, and `isLocked`.
-   - Develop core functions:
-     - `mint`, `burn`, `transfer`, `buyCarbonCredit`, `sellCarbonCredit`, `lockWallet`, `unlockWallet`.
-     - Each function manages balance, credit logic, and wallet lock state.
+With a focus on environmental impact and technological integrity, VerdiCarbon promotes transparency, user empowerment, and meaningful participation in the global carbon offset market.
 
-2. **Error Handling & Logging**
-   - Use Rust `Result` enums to return success or failure.
-   - Append formatted messages to the `history` vector for audit trails.
+---
 
-3. **Business Logic Enforcement**
-   - Ensure wallets must be unlocked to operate.
-   - Require sufficient credit or balance for buy/sell/transfer.
+## 🌍 Vision Statement
 
-4. **Frontend Interface**
-   - Use React + TypeScript with Tabs for Buy, Sell, Burn functionality.
-   - Disable inputs when wallet is locked.
-   - Display real-time feedback and history.
+At **VerdiCarbon**, we believe that combating climate change requires open and accessible tools. Our mission is to **democratize carbon offsetting** by integrating blockchain’s transparency and decentralization into a user-friendly platform. We want to empower individuals, businesses, and organizations to participate in **climate-positive actions** by making carbon credit trading:
 
-5. **Integration with Stellar**
-   - Compile Rust smart contract to be deployed on Stellar via Anchor.
-   - Connect front-end to on-chain wallet logic.
+- Easy to use,
+- Secure and auditable,
+- Environmentally impactful,
+- Economically scalable.
 
-6. **Deployment**
-   - Deploy smart contracts to Stellar testnet.
-   - Host frontend on Vercel or Netlify.
+Through our platform, users can not only track and manage their carbon credits but also become part of a larger ecosystem that values accountability and environmental stewardship.
 
-## Personal Story Summary
-We, Erdem Yavuz Çeltek and Aral Özokçular(@araloz), are committed to addressing environmental issues with cutting-edge technology. With VerdiCarbon, we aim to merge climate consciousness with blockchain innovation to make sustainability actionable, transparent, and efficient for all.
+---
 
+## 🛠️ Software Development Plan
+
+### 1. Smart Contract Design (Rust + Stellar)
+
+- Define a `Wallet` structure with:
+  - `balance`: native token amount
+  - `carbon_credit`: current carbon credit holdings
+  - `history`: transaction logs
+  - `isLocked`: flag indicating if the wallet is locked
+
+- Core Smart Contract Functions:
+  - `mint(amount)`: Create new carbon credits
+  - `burn(amount)`: Destroy credits to offset carbon
+  - `transfer(to, amount)`: Send credits to another wallet
+  - `buyCarbonCredit(amount)`: Purchase credits using balance
+  - `sellCarbonCredit(amount)`: Convert credits to balance
+  - `lockWallet() / unlockWallet(password)`: Prevent unauthorized operations
+
+### 2. Error Handling & Logging
+
+- Implement error safety using `Result<T, E>` types in Rust.
+- Maintain a transaction history log by appending human-readable records to the `history` vector.
+
+### 3. Core Business Rules
+
+- All wallet operations require the wallet to be **unlocked**.
+- Enforce checks for:
+  - Sufficient balance during purchase
+  - Sufficient credits during sale/transfer
+
+### 4. Frontend Interface (React + TypeScript)
+
+- Modular tabbed interface for:
+  - **Buy**
+  - **Sell**
+  - **Burn**
+- Dynamic feedback for operations (success, error)
+- Disable all actions if the wallet is locked
+- Show real-time transaction history
+
+### 5. Stellar Blockchain Integration
+
+- Use Anchor framework to compile and deploy Rust smart contracts to the **Stellar testnet**
+- Integrate wallet interactions via Stellar’s SDK into the frontend
+- Optionally include federated identity and on-chain account abstraction
+
+### 6. Deployment
+
+- Smart contracts deployed to **Stellar testnet**
+- Web frontend hosted via **Vercel** or **Netlify**
+
+---
+
+## 👨‍💻 Team & Story
+
+**Developed by:**  
+- *Erdem Yavuz Çeltek*  
+- *Aral Özokçular*
+
+We are two tech enthusiasts with a passion for sustainability and emerging technologies. VerdiCarbon is our contribution to bridging the gap between climate responsibility and decentralized finance. Through this project, we hope to inspire responsible innovation and promote positive environmental change.
+
+---
+
+## 📎 Additional Information
+
+If you’d like us to include:
+- API documentation,
+- Smart contract `.rs` files,
+- Screenshots or UI diagrams,
+- User stories or testing scenarios,
+
+just send them my way, and I’ll update the `README.md` accordingly!
